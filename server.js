@@ -42,7 +42,7 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
-app.use('/carlogs', carlogsRoutes)
+app.use('/carlog', carlogsRoutes)
 app.use('/maintenance', maintenanceRoutes)
 
  
