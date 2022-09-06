@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arrow Repairs</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/fd2bc706fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Arrow Repairs</a></div>
+            <ul class="menu">
+                <li><a href="#" class="menu-btn">Home</a></li>
+                <li><a href="#" class="menu-btn">About</a></li>
+                <li><a href="#" class="menu-btn">Services</a></li>
+                <li><a href="#" class="menu-btn">Contact</a></li>
+                <li><a href="#" class="menu-btn">Feedback</a></li>
+                
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
@@ -17,10 +38,25 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <form action="/login" method="POST">
+    <div class="center">
+        <h1>Login</h1>
+    <form action=/login method="POST">
+        <div class="txt_field">
         <input type="email" name="email" placeholder="Email">
+        <span></span>
+       
+    </div>
+       <div class="txt_field">
         <input type="password" name="password" placeholder="Password">
-        <input type="submit">
+        <span></span>
+         
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <input type="submit" value="Login">
+        <div class="signup_link">
+            Not a member? <a href="/signup">Signup</a>
+          </div>
     </form>
+    </div>
 </body>
 </html>
