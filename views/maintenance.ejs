@@ -9,6 +9,21 @@
 </head>
 <body>
     <h1>Car Maintenance History for <%= user.userName %>'s account</h1>
+
+    <h2>Add Maintenance Log to <%= user.userName %>'s account:</h2>
+
+    <form action="/maintenance/addMaintenance" method='POST'>
+        <input type="text" placeholder="Enter License plate #" name='licensePlate' class="formBlock">
+        <br>
+        <input type="text" placeholder="Enter Maintenance Title" name='title' class="formBlock">
+        <br>
+        <textarea name="logDetails" cols="30" rows="10" placeholder="Enter maintenance log details here..." class="formBlock" ></textarea>
+        <br>
+        <input type="submit">
+    </form>
+    <br>
+    <hr>
+    <h2>Vehicle Maintenance History:</h2>
     <% logHistory.forEach( (el, ind) => { %>
         <div class='logHistory' data-id='<%=el._id%>'>
             <h3>Log Entry#<%= logHistory.length-ind %></h3>
@@ -23,15 +38,7 @@
     <% }) %>    
     <br>
 
-    <h2>Add Maintenance Log to <%= user.userName %>'s account</h2>
 
-    <form action="/maintenance/addMaintenance" method='POST'>
-        <input type="text" placeholder="Enter License plate #" name='licensePlate'>
-        <input type="text" placeholder="Enter Maintenance Title" name='title'>
-        <textarea name="logDetails" cols="30" rows="10" placeholder="Enter maintenance log details here..." ></textarea>
-
-        <input type="submit">
-    </form>
 
     <br>
     <br>
